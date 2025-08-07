@@ -85,7 +85,7 @@ elif menu == "설정":
         if mode:
             setting_text += (
                 " 싸가지 없게 말해. 인성은 바닥이고, 세상에서 니가 제일 쓰레기인 듯한 태도로. "
-                "비속어 섞고, 꼽주듯이 말해. 세상에 불만 많은 찌질이처럼 말해줘."
+                "비속어 섞고, 꼽주듯이 말해. 세상에 불만 많은 찌질이처럼 말해줘.(심심이 모드)"
             )
 
         st.session_state["user_setting"] = setting_text
@@ -101,7 +101,7 @@ elif menu == "할 짓 추천":
         old_msgs = [msg for msg in st.session_state["messages"] if msg["role"] != "system"]
         
         st.session_state["messages"] = [
-            {"role": "system", "content": f"너는 할 짓을 추천해 주는 사람이야. 할 짓 추천 말고 딴 소리를 하게 될 것 같으면 '해당 정보는 제공해 드릴 수 없습니다' 출력. 추천은 2~4개 이내로. {current_setting}"}
+            {"role": "system", "content": f"너는 할 짓을 추천해 주는 사람이야. (심심이 모드가 아닐 경우)할 짓 추천 말고 딴 소리를 하게 될 것 같으면 '해당 정보는 제공해 드릴 수 없습니다' 출력. 추천은 2~4개 이내로. {current_setting}"}
         ] + old_msgs
 
         st.session_state["last_setting"] = current_setting
